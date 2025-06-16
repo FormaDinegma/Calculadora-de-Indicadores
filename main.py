@@ -2,11 +2,11 @@ import streamlit as st
 
 # Configuración de la página
 st.set_page_config(
-    page_title="Calculadora de Indicadores",
+    page_title="Calculadora de Indicadores Dinegma",
     layout="centered"
 )
 
-# Estilos personalizados en tonos azul/celeste
+# Estilos personalizados
 st.markdown(
     """
     <style>
@@ -28,16 +28,16 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Título personalizado
-st.markdown('<div class="title">🧮 Calculadora de Indicadores Comerciales</div>', unsafe_allow_html=True)
+# Títulos
+st.markdown('<div class="title">🧮 Calculadora de Indicadores Dinegma</div>', unsafe_allow_html=True)
 st.markdown('<div class="sub">💼 Herramienta para evaluar desempeño comercial</div>', unsafe_allow_html=True)
 
 # Entradas
-ventas = st.number_input("👉 Ventas realizadas", min_value=1)
-articulos = st.number_input("🧾 Artículos vendidos", min_value=0)
-valor_total = st.number_input("💰 Valor total vendido (Q)", min_value=0.0)
-clientes = st.number_input("🚶‍♂️ Clientes que ingresaron", min_value=1)
-fidelizados = st.number_input("📈 Tasa de Fidelización", min_value=0)
+ventas = st.number_input("👉 Ventas realizadas", min_value=1, key="ventas")
+articulos = st.number_input("🧾 Artículos vendidos", min_value=0, key="articulos")
+valor_total = st.number_input("💰 Valor total vendido (Q)", min_value=0.0, key="valor")
+clientes = st.number_input("🚶‍♂️ Clientes que ingresaron", min_value=1, key="clientes")
+fidelizados = st.number_input("📈 Tasa de Fidelización", min_value=0, key="fidelizados")
 
 # Botón para calcular
 if st.button("🎯 Calcular Indicadores"):
@@ -52,6 +52,12 @@ if st.button("🎯 Calcular Indicadores"):
     st.write(f"🔸 Tasa de Conversión: `{tc}%`")
     st.write(f"🔸 Tasa de Fidelización: `{tasa_fidel}%`")
 
+    st.markdown("### 🚀 ¡Vamos por más! ¡Tu esfuerzo impacta en los indicadores y en el equipo! 💪🔥")
+
+# Botón para evaluar otro asesor (refresca la app)
+if st.button("🔄 Evaluar otro asesor"):
+    st.experimental_rerun()
+
 # Footer
 st.markdown("---")
-st.caption("🦁 Desarrollado por Edgar Urrutia • Proyecto Formación & Fidelización • 2025")
+st.caption("🦁 Desarrollado por Edgar Urrutia • Proyecto Formación Dinegma • 2025")
