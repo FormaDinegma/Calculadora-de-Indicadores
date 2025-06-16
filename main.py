@@ -55,4 +55,3 @@ if st.button("🎯 Calcular Indicadores"):
 # Footer
 st.markdown("---")
 st.caption("🦁 Desarrollado por Edgar Urrutia • Proyecto Formación & Fidelización • 2025")
-Add main app code
