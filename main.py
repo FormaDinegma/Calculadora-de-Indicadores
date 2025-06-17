@@ -1,6 +1,5 @@
 import streamlit as st
 import random
-import matplotlib.pyplot as plt
 
 # ------------------- CONFIGURACIÓN PÁGINA ------------------- #
 st.set_page_config(
@@ -70,17 +69,7 @@ if st.button("🎯 Calcular Indicadores"):
     # Frase motivadora
     st.markdown(f"### ✨ {random.choice(frases)}")
 
-    # ------------------- GRÁFICA ------------------- #
-    indicadores = ["AxF", "VxF", "TC", "Fidelización"]
-    valores = [axf, vxf, tc, tasa_fidel]
-
-    fig, ax = plt.subplots()
-    ax.bar(indicadores, valores, color=["#0277BD", "#29B6F6", "#4FC3F7", "#81D4FA"])
-    ax.set_ylabel("Valor")
-    ax.set_title("Comparativa de Indicadores")
-    st.pyplot(fig)
-
-    # ------------------- MODO ADMIN ------------------- #
+    # MODO ADMIN
     if es_admin:
         st.markdown("---")
         st.info("🔐 **Modo Admin Activado**")
