@@ -30,10 +30,6 @@ st.markdown("""
 st.markdown('<div class="title">🧮 Calculadora de Indicadores Dinegma</div>', unsafe_allow_html=True)
 st.markdown('<div class="sub">💼 Herramienta para evaluar desempeño comercial</div>', unsafe_allow_html=True)
 
-# ------------------- CAMPO ADMIN ------------------- #
-modo_admin = st.text_input("🔐 Ingresar contraseña para activar modo Admin (opcional)", type="password")
-es_admin = modo_admin == "Formacion.2025"
-
 # ------------------- ENTRADAS ------------------- #
 asesor = st.text_input("👤 Nombre del asesor o asesora", max_chars=30)
 ventas = st.number_input("👉 Ventas realizadas", min_value=1)
@@ -68,14 +64,6 @@ if st.button("🎯 Calcular Indicadores"):
 
     # Frase motivadora
     st.markdown(f"### ✨ {random.choice(frases)}")
-
-    # MODO ADMIN
-    if es_admin:
-        st.markdown("---")
-        st.info("🔐 **Modo Admin Activado**")
-        st.write(f"📌 Asesor/a: `{asesor}`")
-        st.write(f"📌 Ventas: `{ventas}`, Artículos: `{articulos}`, Valor: `Q{valor_total}`")
-        st.write(f"📌 Clientes: `{clientes}`, Fidelizados: `{fidelizados}`")
 
 # ------------------- BOTÓN PARA REINICIAR ------------------- #
 if st.button("🔄 Evaluar otro asesor"):
